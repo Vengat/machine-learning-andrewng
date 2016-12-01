@@ -21,7 +21,7 @@ grad = zeros(size(theta));
 h = sigmoid(X * theta);
 
 theta_for_regularization = [0; theta(2:size(theta), :)]
-p = theta_for_regularization'*theta_for_regularization
+p = theta_for_regularization'*theta_for_regularization % this theta.^2
 J = (1/m)*(-y'* log(h) - (1 - y)'* log(1-h)) + 1/(2*m)*lambda*p;
 
 

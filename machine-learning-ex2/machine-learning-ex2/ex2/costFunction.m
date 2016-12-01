@@ -21,16 +21,41 @@ grad = zeros(size(theta));
 %
 
 h = sigmoid(X * theta);
-
-%J = 1/m * sum(((-y' .* log(h)) - ((1 - y)' .* log(1-h))))
-
-%grad = 1/m*sum(h-y).*X;
-
 J = (1/m)*(-y'* log(h) - (1 - y)'* log(1-h));
 grad = (1/m)*X'*(h - y);
 
-
-
+%
+%X =
+%
+%   1   2
+%   4   5
+%   7   8
+%X =  [ones(m, 1) X]
+%   1   1   2
+%   1   4   5
+%   1   7   8
+%
+%initial_theta = zeros(n + 1, 1)
+%initial_theta or theta=
+%
+%   0
+%   0
+%   0
+%h = sigmoid(X*initital_theta)
+%   0.50000
+%   0.50000
+%   0.50000
+%
+%size(y) = n 1
+%size(y') = 1 n here n=3
+%
+%
+%
+%
+%
+%
+%
+%
 % =============================================================
 
 end
